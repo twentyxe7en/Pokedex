@@ -1,10 +1,10 @@
 const pokedex = document.getElementById('pokedex');
 let pokemon;
-console.log(pokedex);
+// console.log(pokedex);
 
 const fetchPokemon = () => {
 	const promises = [];
-	for (let i = 1; i <= 151; i++) {
+	for (let i = 1; i <= 1008; i++) {
 		const url = 'https://pokeapi.co/api/v2/pokemon/' + i;
 		promises.push(fetch(url).then((res) => res.json()));
 
@@ -27,7 +27,7 @@ const fetchPokemon = () => {
 };
 
 const display = (pokemon) => {
-	console.log(pokemon)
+	// console.log(pokemon)
 	const pokemonHTMLString = pokemon.map(data =>
 		'<li class="card" id="' + data.id + '" onClick="displayInfo(this.id)">' + 
 			'<img class="card-img" src="' +  data.image + '">' +
@@ -68,8 +68,14 @@ function displayInfo(id) {
 	abilities.innerHTML = '';
 	for (let j = 0; j < pokemon[i].abilities.length; j++) {
 		let ability = document.createElement('p');
-		if (pokemon[i].abilities.length > 1 && j == (pokemon[i].abilities.length - 1)) {
+		if (j == pokemon[i].abilities.length - 1 && j != 0) {
 			ability.innerHTML = pokemon[i].abilities[j].ability.name + ' (hidden)';
+		} else if (pokemon[i].abilities.length == 1) {
+			ability.innerHTML = pokemon[i].abilities[j].ability.name;
+		} else if (j == 0 && pokemon[i].abilities[j].ability.name == pokemon[i].abilities[j + 1].ability.name) {
+			ability.innerHTML = pokemon[i].abilities[j].ability.name;
+			abilities.append(ability);
+			break;
 		} else {
 			ability.innerHTML = pokemon[i].abilities[j].ability.name;
 		}
@@ -77,5 +83,5 @@ function displayInfo(id) {
 	}
 
 
-	console.log(pokemon[i]);
+	// console.log(pokemon[i]);
 }
