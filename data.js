@@ -17,7 +17,7 @@ const fetchPokemon = () => {
 			type: data.types.map((type) => type.type.name).join('/'),
 			types: data.types,
 			stats: data.stats,
-			image: data.sprites['front_default']
+			image: data.sprites.other["official-artwork"].front_default
 		}));
 		display(pokemon);
 	});
