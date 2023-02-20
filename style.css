@@ -203,6 +203,7 @@ h1 {
 
 #h-w {
 	font-size: 12px;
+	text-transform: lowercase !important;
 }
 
 #base-info p, #base-info h2 {
