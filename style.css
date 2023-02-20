@@ -1,0 +1,206 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #fff;
+	margin: 0;
+	font-family: "Calibri";
+	max-height: 100vh;
+}
+
+.card {
+	display: flex;
+	width: 90%;
+	height: 60px;
+	list-style: none;
+	padding: 10px;
+	background: #fff;
+	color: #222;
+	text-align: center;
+	box-shadow: 0 10px 10px -8px #333;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 40px;
+}
+
+.card:hover {
+	animation: bounce 0.5s linear;
+	background: #ff4500;
+}
+
+.card:hover h2, .card:hover p {
+	color: #fff;
+	font-weight: bold;
+}
+
+@keyframes bounce {
+	20% {
+		transform: translateY(-6px);
+	}
+	40% {
+		transform: translateY(0);
+	}
+	60% {
+		transform: translateY(-2px);
+	}
+	80% {
+		transform: translateY(0);
+	}
+}
+
+.card-info {
+	position: relative;
+	display: flex;
+/*	flex-direction: column;*/
+	justify-content: space-evenly;
+	align-items: center;
+/*	border: 2px solid #000;*/
+	width: 67%;
+	height: 100%;
+}
+
+.card-title {
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: normal;
+	/*margin-top: -10px;
+	margin-bottom: -10px;*/
+}
+
+.card-subtitle {
+	font-size: 14px;
+	font-weight: lighter;
+	color: #666;
+	text-transform: uppercase;
+/*	margin-bottom: 0;*/
+}
+
+.card-img {
+	height: 80px;
+}
+
+#pokedex {
+	padding-inline-start: 0;
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 8px;
+	border: 1px solid rgba(240, 240, 240, 0.5);
+	width: 450px;
+	height: calc(1049px - 100px);
+	justify-content: flex-start;
+	overflow-y: auto;
+	align-items: center;
+	background: #eee;
+	box-shadow: 0 -5px 25px -5px #222 inset;
+}
+
+#pokedex::-webkit-scrollbar {
+	width: 6px;
+}
+
+#pokedex::-webkit-scrollbar-track {
+	background: #eee;
+}
+
+#pokedex::-webkit-scrollbar-thumb {
+	background: orangered;
+	border-radius: 8px;
+	opacity: 50%;
+}
+
+#pokedex::-webkit-scrollbar-thumb:hover {
+	background: #ff7420;
+}
+
+.container {
+/*	padding: 20px;*/
+/*	margin: 0 auto;*/
+	height: 1049px;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow: hidden;
+}
+
+.header {
+/*	border: 2px solid #fff;*/
+	height: 100px;
+	width: 1920px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: orangered;
+	box-shadow: 0 5px 10px -5px #222;
+	z-index: 1000;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+}
+
+.main {
+	position: relative;
+	display: flex;
+	height: calc(1049px - 100px);
+}
+
+.main div {
+	position: relative;
+}
+
+table {
+	/*border-collapse: collapse;
+	border: 1px solid #fff;*/
+	display: none;
+}
+
+.list {
+	padding: 0;
+	height: 100%;
+}
+
+td {
+	border-radius: 40px;
+	color: orangered;
+	padding: 12px;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-weight: bold;
+	background: #fff;
+	border: 2px solid orangered;
+}
+
+.table {
+	padding: 1rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: calc(1920px - 450px);
+	height: 100%;
+}
+
+.header, .main, #pokedex {
+	border: none;
+}
+
+#name {
+	width: 200px;
+}
+
+#stats {
+	width: 50%;
+	justify-content: center;
+	align-items: center;
+}
