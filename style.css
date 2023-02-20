@@ -24,6 +24,11 @@ body {
 	align-items: center;
 	cursor: pointer;
 	border-radius: 40px;
+	margin-bottom: 2px;
+}
+
+.card:last-child {
+	margin-bottom: 9px;
 }
 
 .card:hover {
@@ -90,10 +95,16 @@ body {
 	grid-gap: 8px;
 	border: 1px solid rgba(240, 240, 240, 0.5);
 	width: 450px;
-	height: calc(1049px - 100px);
+	height: 99%;
 	justify-content: flex-start;
 	overflow-y: auto;
 	align-items: center;
+	
+	
+}
+
+.list {
+	height: calc(1049px - 200px);
 	background: #eee;
 	box-shadow: 0 -5px 25px -5px #222 inset;
 }
